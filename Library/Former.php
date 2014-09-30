@@ -2,6 +2,8 @@
 /**
  * CodeIgniter form builder from database table column types.
  *
+ *
+ *
  * @author Tomaz Lovrec <tomaz.lovrec@gmail.com>
  */
 if (!defined('BASEPATH')) {
@@ -46,8 +48,9 @@ class Former
         $form = "";
         foreach ($this->_columns as $c) {
             $data = array(
-                "name"  =>  $c->name,
-                "value" =>  ""
+                "name"      =>  $c->name,
+                "length"    =>  $c->max_length ? $c->max_length : "disabled",
+                "value"     =>  ""
             );
             if ($c->primary_key == true) {
                 $form .= $this->_ci->load->view("former/hidden", $data, true);
