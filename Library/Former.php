@@ -88,7 +88,7 @@ class Former
                         $form .= $this->_ci->load->view("former/datetime", $data, true);
                         break;
                     case "timestamp":
-                        $form .= $this->_ci->load->view("former/timestampe", $data, true);
+                        $form .= $this->_ci->load->view("former/timestamp", $data, true);
                         break;
                     case "enum":
                         $form .= $this->_ci->load->view("former/dropdown", $data, true);
@@ -110,6 +110,6 @@ class Former
     protected function _getTableData($table)
     {
         $this->_columns = $this->_ci->db->field_data($table);
-        var_dump($this->_columns);
+        //var_dump($this->_columns);
     }
 }
