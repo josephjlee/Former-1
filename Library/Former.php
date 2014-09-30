@@ -87,6 +87,9 @@ class Former
                     case "datetime":
                         $form .= $this->_ci->load->view("former/datetime", $data, true);
                         break;
+                    case "year":
+                        $form .= $this->_ci->load->view("former/year", $data, true);
+                        break;
                     case "timestamp":
                         $form .= $this->_ci->load->view("former/timestamp", $data, true);
                         break;
@@ -110,6 +113,6 @@ class Former
     protected function _getTableData($table)
     {
         $this->_columns = $this->_ci->db->field_data($table);
-        //var_dump($this->_columns);
+        var_dump($this->_columns);
     }
 }
